@@ -1,0 +1,82 @@
+{%extends 'theme.html'%}
+
+{%block main%}
+        <div class="container">
+            <div class="row mt-3">
+                <!-- categories list columns-->
+                 <div class="col-lg-3">
+                    <div class="list-group border shadow">
+                        <a href="/" class="m-2">
+                            <button class="btn btn-outline-dark" style="width: 12rem">
+                                All products
+                            </button>
+
+                        </a>
+
+                        {%for j in categories%}
+                        <a href="/?category={{j.id}}" class="m-2">
+                            <button class="btn btn-outline-dark" style="width: 12rem">{{j.name}}</button>
+                        </a>
+
+                        {%endfor%}
+                    </div>
+                 </div>
+                 <div class="col-lg-9">
+                    <div class=" row">
+                        {%for i in products%}
+                        <div class="col-lg-4">
+                            
+                            <div class="card mb-5 shadow" style="width:16rem; height: 35rem ">
+                                <div class="card-header">
+                                    <img src="{{i.image.url}}" class="img-fluid">
+                                </div>
+                                <div class="card-body">
+                                    <h5>{{i.name}}</h5>
+                                    <h4>price : {{i.price}}</h4>
+                                </div>
+                                <div class="card-footer">
+                                    <buttin class="btn btn-outline-dark">
+                                        Book Now
+                                    </buttin>
+                                </div>
+                            </div>
+        
+                            
+                        </div>
+                        {%endfor%}
+                    </div>
+                 </div>
+            </div>
+
+            
+        </div>
+
+{%endblock%}
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> My Products</h1>
+    
+    <table border="5">
+        <tr>
+            <td> Name</td>
+            <td> Description</td>
+            <td> image</td>
+            <td> price</td>
+        </tr>
+        {%for i in products%}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.desc}}</td>
+            <td><img src="{{i.image.url}}" width="200px" height="200px"></td>
+            <td>{{i.price}}</td>
+        </tr>   
+        {%endfor%} 
+    </table>
+</body>
+</html> -->
